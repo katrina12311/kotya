@@ -22,6 +22,10 @@
 <li><a href="s3-6.7.php"><u>ЗАДАЧА №3.6-7</u></a></li>
 <li><a href="s3-6.10.php"><u>ЗАДАЧА №3.6-10</u></a></li>
 </ul>
+ЛР № 4 </br>
+<ul id="nav">
+<li><a href="main.php">База данных </a>
+</ul>
 <?php
 
 ?>
