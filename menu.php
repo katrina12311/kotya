@@ -2,7 +2,7 @@
 		a {
 			
 			color:#FF6633;
-			echo "<img src='https://cdn.sm-news.ru/wp-content/uploads/2019/11/23/catfromshrek.jpg'>";
+			echo "<img src='1.jpg'>";
 		}
 </style>
 <ul id="nav">
