@@ -1,7 +1,7 @@
 <style>
 		a {
 			
-			color:#FF6633;
+			color:#FF1493;
 		}
 </style>
 <ul id="nav">
