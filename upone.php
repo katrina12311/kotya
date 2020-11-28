@@ -9,7 +9,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTD-8">
-	<title>ОБНОВЛЕНИЕ БАЗЫ</title>
+	<title>Редактирование</title>
 </head>
 <style>
 		p {
@@ -22,7 +22,7 @@
 	   }
 </style>
 <body>
-	<h3>ОБНОВЛЕНИЕ БАЗЫ</h3>
+	<h3>Редактирование</h3>
 	<form action="uptwo.php" method="post">
 		<input type="hidden" name="id" value="<?=$prod['id']?>">
 		<p>Наименование</p>
@@ -35,7 +35,7 @@
 		<input type="number" name="lecture" value="<?=$prod['lecture']?>">
 		<p>Кол-во ЛР</p>
 		<input type="number" name="lr" value="<?=$prod['lr']?>"><br><br>
-		<button type="sumbit">Редактирование дисциплины</button>
+		<button type="sumbit">Редактировать</button>
 		</form>
 </body>
 </html>

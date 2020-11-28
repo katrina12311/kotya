@@ -1,14 +1,12 @@
 <?php
 	require_once'connect.php';
-	
-
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTD-8">
-	<title>Предметы</title>
+	<title>Расписание экзаменов</title>
 </head>
 <style>
 		p {
@@ -34,15 +32,15 @@
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Наименование</th>
-			<th>Преподаватель</th>
-			<th>Факультет</th>
-			<th>Кол-во лекций</th>
-			<th>Кол-во ЛР</th>
-			<th><a href="adddop.php?id=<?= $stu[0]?>">Добавить</a></th>
+			<th>ID группы</th>
+			<th>ID предмета</th>
+			<th>Дата консультации</th>
+			<th>Дата экзамена</th>
+			<th>Аудитория</th>
+			<th><a href="tadddop.php?id=<?= $stu[0]?>">Добавить</a></th>
 		</tr>
 		<?php
-			$stud=mysqli_query($mysql, "SELECT * FROM `object`");
+			$stud=mysqli_query($mysql, "SELECT * FROM `rasp`");
 			$stud = mysqli_fetch_all($stud);
 			foreach ($stud as $stu){
 				?>
@@ -50,16 +48,17 @@
 					<td><?= $stu[0]?></td>
 					<td><?= $stu[1]?></td>
 					<td><?= $stu[2]?></td>
-					<td><?= $stu[3]?></td> 
+					<td><?= $stu[3]?></td>
 					<td><?= $stu[4]?></td>
 					<td><?= $stu[5]?></td>
-					<td><a href="upone.php?id=<?= $stu[0]?>">Обновить</a></td>
-					<td><a style="color: red" href="delete.php?id=<?= $stu[0]?>">Удалить</a></td>
+					<td><a href="tupone.php?id_rasp=<?= $stu[0]?>">Обновить</a></td>
+					<td><a style="color: red" href="tdelete.php?id_rasp=<?= $stu[0]?>">Удалить</a></td>
 		</tr>
 		<?php
 			}
 	
 		?>
+		
 		</table>
 		<br><a style="color: #50c878" href=" menu.php">Вернуться в меню</a>
 </body>
