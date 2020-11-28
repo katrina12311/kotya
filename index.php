@@ -26,6 +26,10 @@
 <ul id="nav">
 <li><a href="main.php">База данных </a>
 </ul>
+ЛР № 5 </br>
+<ul id="nav">
+<li><a href="menu.php">База данных с pdf и xls</a>
+</ul>
 <?php
 
 ?>
