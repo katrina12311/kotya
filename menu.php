@@ -1,4 +1,4 @@
-<body style = "background: url(https://cdn.sm-news.ru/wp-content/uploads/2019/11/23/catfromshrek.jpg); background-repeat: no-repeat;>
+<body style = "background: url(https://cdn.sm-news.ru/wp-content/uploads/2019/11/23/catfromshrek); background-repeat: no-repeat;>
 </body>       
 <style>
 		a {
