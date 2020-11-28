@@ -11,3 +11,6 @@
 	<br><br><a>Нажмите </a><a style="color: red" href='pdf.php';>PDF</a><a>, чтобы скачать pdf файл. </a><br><br>
 	<a>Нажмите </a><a style="color: green" href='xls.php';>XML</a><a>, чтобы скачать xml файл. </a>
 </ul>
+<body>
+<img src="1.jpg">
+<table>
