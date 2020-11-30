@@ -46,10 +46,10 @@
 		if ($result){
                     // Для каждой строки из запроса
                     while ($row = $result->fetch_array()){
-						echo "<option selected value='$id'>$name</option>";
+						
                         $id = $row['id'];
                         $name = $row['name'];
-
+			echo "<option selected value='$id'>$name</option>";
                         echo "<option value='$id'>$name</option>";
                     }
                 }
