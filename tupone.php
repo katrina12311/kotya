@@ -32,10 +32,10 @@
 			
                     // Для каждой строки из запроса
                     while ($row = $result->fetch_array()){
-						 
+			echo "<option selected value='$id_group'>$name_group</option>";				 
                         $id_group = $row['id_group'];
                         $name_group = $row['name_group'];
-			echo "<option selected value='$id_group'>$name_group</option>";	
+			
                         echo "<option value='$id_group'>$name_group</option>";
                     }
                 }
@@ -47,10 +47,10 @@
 		if ($result){
                     // Для каждой строки из запроса
                     while ($row = $result->fetch_array()){
-						
+			echo "<option selected value='$id'>$name</option>";			
                         $id = $row['id'];
                         $name = $row['name'];
-			echo "<option selected value='$id'>$name</option>";
+			
                         echo "<option value='$id'>$name</option>";
                     }
                 }
