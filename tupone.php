@@ -35,11 +35,11 @@
 						 
                         $id_group = $row['id_group'];
                         $name_group = $row['name_group'];
-						
+			echo "<option selected value='$id_group'>$name_group</option>";	
                         echo "<option value='$id_group'>$name_group</option>";
                     }
                 }
-		       echo "<option selected value='$id_group'>$name_group</option>";
+		       
                 echo "</select>";
 		$result = mysqli_query($mysql, "SELECT id, name FROM object");
 		echo '<p style="color: #50c878">'."Предмет<br><br> <select name='id'>";
@@ -50,11 +50,11 @@
 						
                         $id = $row['id'];
                         $name = $row['name'];
-			
+			echo "<option selected value='$id'>$name</option>";
                         echo "<option value='$id'>$name</option>";
                     }
                 }
-		echo "<option selected value='$id'>$name</option>";
+		
                 echo "</select>";
 		?>
 		<p>Дата консультации</p>
