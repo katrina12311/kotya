@@ -28,11 +28,12 @@
 		<?php
 		$result = mysqli_query($mysql, "SELECT id_group, name_group FROM groupa");
 		echo '<p style="color: #50c878">'."<br>Группа<br><br> <select name='id_group'>";
+		echo "<option selected value='$id_group'>$name_group</option>";	
 		if ($result){
 			
                     // Для каждой строки из запроса
                     while ($row = $result->fetch_array()){
-			echo "<option selected value='$id_group'>$name_group</option>";				 
+						 
                         $id_group = $row['id_group'];
                         $name_group = $row['name_group'];
 			
@@ -43,11 +44,11 @@
                 echo "</select>";
 		$result = mysqli_query($mysql, "SELECT id, name FROM object");
 		echo '<p style="color: #50c878">'."Предмет<br><br> <select name='id'>";
-        
+        	echo "<option selected value='$id'>$name</option>";
 		if ($result){
                     // Для каждой строки из запроса
                     while ($row = $result->fetch_array()){
-			echo "<option selected value='$id'>$name</option>";			
+						
                         $id = $row['id'];
                         $name = $row['name'];
 			
