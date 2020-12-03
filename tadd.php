@@ -6,8 +6,8 @@
 		$date_cons=$_POST['date_cons'];
 		$date_ex=$_POST['date_ex'];
 		$aud=$_POST['aud'];
-		$date_cons = date('d.m.Y', strtotime($date_cons));
-		$date_ex = date('d.m.Y', strtotime($date_ex));
+		$date_cons = date('Y.m.d', strtotime($date_cons));
+		$date_ex = date('Y.m.d', strtotime($date_ex));
 		if ($date_cons>$date_ex){
 			echo "Ошибка:Консультация не может быть позже экзамена.";
 			exit;

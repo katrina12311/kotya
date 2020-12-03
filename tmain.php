@@ -43,20 +43,22 @@
 			$stud=mysqli_query($mysql, "SELECT * FROM `rasp`");
 			$stud = mysqli_fetch_all($stud);
 			foreach ($stud as $stu){
+			$date_cons = date('d.m.Y', strtotime($stu[3]));
+			$date_ex = date('d.m.Y', strtotime($stu[4]));
 				?>
 				<tr>
 					<td><?= $stu[0]?></td>
 					<td><?= $stu[1]?></td>
 					<td><?= $stu[2]?></td>
-					<td><?= $stu[3]?></td>
-					<td><?= $stu[4]?></td>
+					<td><?= $date_cons?></td>
+					<td><?= $date_ex?></td>
 					<td><?= $stu[5]?></td>
 					<td><a href="tupone.php?id_rasp=<?= $stu[0]?>">Обновить</a></td>
 					<td><a style="color: red" href="tdelete.php?id_rasp=<?= $stu[0]?>">Удалить</a></td>
 		</tr>
 		<?php
 			}
-	
+			
 		?>
 		
 		</table>
