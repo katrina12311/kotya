@@ -29,7 +29,7 @@ $date_ex = $row['date_ex'];
 $aud = $row['aud'];
 $faculty_group = $row['faculty_group'];
 $name_group = $row['name_group'];
-
+$date_ex = date('d.m.Y', strtotime($date_ex));
 $pdf->Cell($w[0],$h,$c,'LRTB','0','C');
 $pdf->Cell($w[2],$h,$date_ex,'RTB','0','C');
 $pdf->Cell($w[2],$h,$aud,'RTB','0','C');
