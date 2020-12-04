@@ -53,30 +53,28 @@
 				LEFT JOIN groupa ON rasp.id_group=groupa.id_group"
 			);
 
-			$stud = mysqli_fetch_array($prod);
+			
 
-			$rasp_id = $stud['id_rasp'];
-			$date_cons = $stud['date_cons'];
-			$date_ex = $stud['date_ex'];
-			$aud = $stud['aud'];
-			$group_name = $stud['group_name'];
-			$object_name = $stud['object_name'];
+			while ($stud = mysqli_fetch_array($prod)){
+				$rasp_id = $stud['id_rasp'];
+				$date_cons = $stud['date_cons'];
+				$date_ex = $stud['date_ex'];
+				$aud = $stud['aud'];
+				$group_name = $stud['group_name'];
+				$object_name = $stud['object_name'];
 
-			$date_cons = date('d.m.Y', strtotime($date_cons));
-			$date_ex = date('d.m.Y', strtotime($date_ex));
+				$date_cons = date('d.m.Y', strtotime($date_cons));
+				$date_ex = date('d.m.Y', strtotime($date_ex));
+
+				echo "<tr>";
+
+				echo "<td>$rasp_id</td> <td>$group_name</td> <td>$object_name</td> <td>$date_cons</td> <td>$date_ex</td>";
+				echo "<td>$aud</td> <td><a href='tupone.php?id_rasp=$rasp_id'>Обновить</a></td>";
+				echo "<td><a style='color: red' href='tdelete.php?id_rasp=$rasp_id'>Удалить</a></td>";
+				echo "</tr>";
+			}
 		?>
-		<tr>
-			<td><?= $rasp_id?></td>
-			<td><?= $group_name?></td>
-			<td><?= $object_name?></td>
-			<td><?= $date_cons?></td>
-			<td><?= $date_ex?></td>
-			<td><?= $aud?></td>
-			<td><a href="tupone.php?id_rasp=<?=$rasp_id?>">Обновить</a></td>
-			<td><a style="color: red" href="tdelete.php?id_rasp=<?=$rasp_id?>">Удалить</a></td>
-		</tr>
-		
-		</table>
-		<br><a style="color: #50c878" href=" menu.php">Вернуться в меню</a>
+	</table>
+	<br><a style="color: #50c878" href=" menu.php">Вернуться в меню</a>
 </body>
 </html>
