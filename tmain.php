@@ -1,9 +1,5 @@
-<?php
-	require_once'connect.php';
-
-?>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTD-8">
 	<title>Расписание экзаменов</title>
@@ -14,14 +10,14 @@
 			color:#50c878;
 		}
 		input {
-		background: #f5f5dc; 
+		background: #f5f5dc;
 		padding: 1px; 
 	   }
 		th,td {
 			padding:5px;
 			}
 		th {
-			background:#50c878; 
+			background:#50c878;
 			color:#fff;
 			}
 		td {
@@ -32,34 +28,53 @@
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>ID группы</th>
-			<th>ID предмета</th>
+			<th>Группа</th>
+			<th>Предмет</th>
 			<th>Дата консультации</th>
 			<th>Дата экзамена</th>
 			<th>Аудитория</th>
-			<th><a href="tadddop.php?id=<?= $stu[0]?>">Добавить</a></th>
+			<th><a href="tadddop.php">Добавить</a></th>
 		</tr>
 		<?php
-			$stud=mysqli_query($mysql, "SELECT * FROM `rasp`");
-			$stud = mysqli_fetch_all($stud);
-			foreach ($stud as $stu){
-			$date_cons = date('d.m.Y', strtotime($stu[3]));
-			$date_ex = date('d.m.Y', strtotime($stu[4]));
-				?>
-				<tr>
-					<td><?= $stu[0]?></td>
-					<td><?= $stu[1]?></td>
-					<td><?= $stu[2]?></td>
-					<td><?= $date_cons?></td>
-					<td><?= $date_ex?></td>
-					<td><?= $stu[5]?></td>
-					<td><a href="tupone.php?id_rasp=<?= $stu[0]?>">Обновить</a></td>
-					<td><a style="color: red" href="tdelete.php?id_rasp=<?= $stu[0]?>">Удалить</a></td>
-		</tr>
-		<?php
-			}
-			
+			require_once 'connect.php';
+
+			$prod = mysqli_query($mysql,"SELECT
+				rasp.id_rasp,
+				rasp.date_cons,
+				rasp.date_ex,
+				rasp.aud,
+
+				groupa.name_group as group_name,
+
+				object.name as object_name
+
+				FROM rasp
+				LEFT JOIN object ON rasp.id=object.id
+				LEFT JOIN groupa ON rasp.id_group=groupa.id_group"
+			);
+
+			$stud = mysqli_fetch_array($prod);
+
+			$rasp_id = $stud['id_rasp'];
+			$date_cons = $stud['date_cons'];
+			$date_ex = $stud['date_ex'];
+			$aud = $stud['aud'];
+			$group_name = $stud['group_name'];
+			$object_name = $stud['object_name'];
+
+			$date_cons = date('d.m.Y', strtotime($date_cons));
+			$date_ex = date('d.m.Y', strtotime($date_ex));
 		?>
+		<tr>
+			<td><?= $rasp_id?></td>
+			<td><?= $group_name?></td>
+			<td><?= $object_name?></td>
+			<td><?= $date_cons?></td>
+			<td><?= $date_ex?></td>
+			<td><?= $aud?></td>
+			<td><a href="tupone.php?id_rasp=<?=$rasp_id?>">Обновить</a></td>
+			<td><a style="color: red" href="tdelete.php?id_rasp=<?=$rasp_id?>">Удалить</a></td>
+		</tr>
 		
 		</table>
 		<br><a style="color: #50c878" href=" menu.php">Вернуться в меню</a>
